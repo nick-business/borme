@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cambios de direccion en la cartera de su despacho</title>
-<meta name="description" content="Cada mes, los nombramientos y ceses del organo de direccion de las sociedades de su cartera, leidos del BORME.">
-<style>
+<title>Cambios de dirección en la cartera de su despacho</title>
+<meta name="description" content="Cada mes, los nombramientos y ceses del órgano de dirección de las sociedades de su cartera, leídos del BORME.">
+
   :root {
     --tinta: #1a1a1a;
     --gris: #6b6b6b;
@@ -38,7 +38,17 @@
     display: flex; align-items: baseline; gap: 12px;
     margin: 20px 0 8px;
   }
-  .cifra { font-size: 46px; font-weight: 600; }
+  .cifra {
+    font-size: 46px; font-weight: 600; line-height: 1;
+    /* Georgia dibuja las cifras a la antigua: el 1 y el 9 son mas bajos y
+       cuelgan por debajo de la linea base, mientras que el simbolo del euro se
+       apoya en ella. Por eso el precio se ve descuadrado. Con cifras de
+       altura uniforme, digitos y euro se apoyan en la misma linea. */
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: "lnum" 1, "tnum" 1;
+    /* El euro nunca debe caer a la linea siguiente al estrechar la pantalla. */
+    white-space: nowrap; flex-shrink: 0;
+  }
   .periodo { color: var(--gris); font-size: 17px; }
   .caja {
     border: 1px solid var(--linea); background: var(--fondo);
@@ -59,10 +69,10 @@
 
 <header>
   <div class="envoltura">
-    <h1>Cambios de direccion en la cartera de su despacho</h1>
+    <h1>Cambios de dirección en la cartera de su despacho</h1>
     <p class="entradilla">
-      El BORME publica a diario quien entra y quien sale del organo de direccion
-      de las sociedades de Espana. Nosotros lo cruzamos con la cartera de su
+      El BORME publica a diario quién entra y quién sale del órgano de dirección
+      de las sociedades de España. Nosotros lo cruzamos con la cartera de su
       despacho y le mandamos solo lo que afecta a sus clientes.
     </p>
   </div>
@@ -74,7 +84,7 @@
   <h2>El problema</h2>
   <p>
     Un despacho medio tiene entre 200 y 800 sociedades clientes. Cada una publica
-    en el BORME cuando toca un acto. Nadie se lee el BORME. Asi que se enteran de
+    en el BORME cuando toca un acto. Nadie se lee el BORME. Así que se enteran de
     los cambios de su cliente cuando el cliente se queja, o cuando Hacienda
     pregunta, o cuando ya no le queda otra cosa.
   </p>
@@ -85,16 +95,16 @@
 </section>
 
 <section>
-  <h2>Que recibe</h2>
+  <h2>Qué recibe</h2>
   <p>Un informe a final de mes, con tres apartados:</p>
   <ul>
-    <li><strong>Nombramientos.</strong> Que administrador se incorporo y en cual
+    <li><strong>Nombramientos.</strong> Qué administrador se incorporó y en cual
         de sus clientes.</li>
-    <li><strong>Ceses.</strong> Quien dejo de serlo. Esto es lo que le permite
-        llamar al cliente antes de que se entere el.</li>
+    <li><strong>Ceses.</strong> Quién dejó de serlo. Esto es lo que le permite
+        llamar al cliente antes de que se entere él.</li>
     <li><strong>Un nombre en varias de sus sociedades.</strong> La misma persona
-        dirigiendo dos o mas clientes suyos sin que usted lo supiera. Eso no es
-        un dato registral: es una conversacion.</li>
+        dirigiendo dos o más clientes suyos sin que usted lo supiera. Eso no es
+        un dato registral: es una conversación.</li>
   </ul>
   <div class="ejemplo">Un nombre en varias de sus sociedades
 
@@ -110,45 +120,45 @@ Ceses
 <section>
   <h2>De donde salen los datos</h2>
   <p class="verificable">
-    De los datos abiertos del Boletin Oficial del Registro Mercantil, que son
+    De los datos abiertos del Boletín Oficial del Registro Mercantil, que son
     publicos. Cada movimiento del informe lleva el identificador del documento
-    del que sale, asi que usted puede abrir el original y comprobarlo usted
+    del que sale, así que usted puede abrir el original y comprobarlo usted
     mismo. No lo inflamos y no lo adornamos.
   </p>
   <p class="verificable">
     Lo que <em>no</em> hacemos: no enriquecemos nada, no buscamos emails ni
     telefonos, no contactamos con nadie por su cuenta. Lo que sale del informe es
-    lo que esta publicado y lo puede ir a ver usted mismo.
+    lo que está publicado y lo puede ir a ver usted mismo.
   </p>
 </section>
 
 <section>
   <h2>Precio</h2>
   <div class="precio">
-    <span class="cifra">199 &euro;</span>
+    <span class="cifra">199&nbsp;&euro;</span>
     <span class="periodo">al mes, por despacho. Sin permanencia.</span>
   </div>
   <p class="nota">
     Se factura por mes natural. El primer informe se emite cuando la cartera
-    este cargada y usted confirme las sociedades. Si un mes no sale ningun cambio,
+    esté cargada y usted confirme las sociedades. Si un mes no sale ningun cambio,
     no se factura ese mes.
   </p>
   <div class="caja">
     <p style="margin-top:0">
-      Para empezar, escribanos con el numero de sociedades de su cartera. Le
-      enviamos la factura de PayPal y en cuanto este pagada cargamos su cartera
+      Para empezar, escríbanos con el número de sociedades de su cartera. Le
+      enviamos la factura de PayPal y en cuanto esté pagada cargamos su cartera
       y emitimos el primer informe.
     </p>
     <a class="boton" href="mailto:nick1business1company1@gmail.com?subject=Consulta%20informes%20de%20cartera&body=Necesito%20informes%20mensuales%20de%20mi%20cartera.%0A%0ANumero%20aproximado%20de%20sociedades%20clientes%3A%0AProvincia%20principal%3A%0A%0AAdjunto%20la%20cartera%20en%20un%20fichero%20de%20texto.">Pedir el primer mes</a>
     <p class="nota" style="margin-bottom:0">
-      Factura de PayPal. Se paga con cuenta o tarjeta. El cargo automatico lo
-      activamos mas adelante, cuando el servicio este rodando; de momento le
+      Factura de PayPal. Se paga con cuenta o tarjeta. El cargo automático lo
+      activamos más adelante, cuando el servicio esté rodando; de momento le
       facturamos cada mes.
     </p>
   </div>
   <p class="nota">
-    Por encima de 1.500 sociedades en cartera el precio se ajusta. Preguntenos y
-    le decimos el numero exacto antes de que pague nada.
+    Por encima de 1.500 sociedades en cartera el precio se ajusta. Pregúntenos y
+    le decimos el número exacto antes de que pague nada.
   </p>
 </section>
 
@@ -160,11 +170,11 @@ Ceses
     su cliente, ni a su NIF, ni a su IVA, ni a nada que no salga publicado.
   </p>
   <p>
-    <strong>Antes del primer informe, consultelo con su asesor de proteccion de
+    <strong>Antes del primer informe, consultelo con su asesor de protección de
     datos.</strong> El nombre de un administrador es dato personal. Publicarlo no
     es lo mismo que tratarlo, y el tratamiento que haga usted de ese informe
     tiene que encajar con el RGPD y con la LSSI. Nosotros no somos abogados ni
-    su delegado de proteccion de datos.
+    su delegado de protección de datos.
   </p>
 </section>
 
@@ -173,7 +183,7 @@ Ceses
 <footer>
   <div class="envoltura">
     <p>
-      Datos: Boletin Oficial del Registro Mercantil (datos abiertos del BOE).<br>
+      Datos: Boletín Oficial del Registro Mercantil (datos abiertos del BOE).<br>
       <span class="ojo">Contacto:</span> nick1business1company1@gmail.com
     </p>
   </div>
